@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ATAK Colors -->
+    <color name="atak_background">#FF1E1E1E</color>
+    <color name="atak_text">#FFFFFFFF</color>
+    <color name="atak_text_secondary">#FFAAAAAA</color>
+    <color name="atak_accent">#FF4CAF50</color>
+    
+    <!-- PTT States -->
+    <color name="ptt_idle">#FF424242</color>
+    <color name="ptt_pressed">#FF616161</color>
+    <color name="ptt_transmitting">#FFF44336</color>
+    <color name="ptt_transmitting_bright">#FFFF5722</color>
+    <color name="ptt_border">#FF757575</color>
+    
+    <!-- Status -->
+    <color name="ptt_connected">#FF4CAF50</color>
+    <color name="ptt_disconnected">#FF9E9E9E</color>
+    <color name="ptt_error">#FFF44336</color>
+    <color name="ptt_connecting">#FFFF9800</color>
+    
+    <!-- User States -->
+    <color name="user_speaking">#FF4CAF50</color>
+    <color name="user_muted">#FFF44336</color>
+</resources>
