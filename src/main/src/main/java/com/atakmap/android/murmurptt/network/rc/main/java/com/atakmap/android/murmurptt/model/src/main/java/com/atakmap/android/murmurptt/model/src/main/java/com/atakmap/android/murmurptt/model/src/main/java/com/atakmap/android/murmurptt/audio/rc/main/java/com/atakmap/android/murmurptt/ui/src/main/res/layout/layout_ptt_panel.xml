@@ -1,0 +1,124 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/atak_background"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MURMUR PTT"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/atak_text"
+        android:gravity="center"
+        android:padding="8dp" />
+
+    <!-- Status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <View
+            android:id="@+id/status_indicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/circle_status"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desconectado"
+            android:textColor="@color/atak_text"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/channel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canal: Root"
+            android:textColor="@color/atak_accent"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- PTT Button -->
+    <ImageButton
+        android:id="@+id/ptt_button"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="24dp"
+        android:background="@drawable/ptt_button_idle"
+        android:src="@drawable/ic_mic"
+        android:scaleType="centerInside"
+        android:contentDescription="Push to Talk" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mantén presionado para hablar"
+        android:textAlignment="center"
+        android:textColor="@color/atak_text_secondary"
+        android:textSize="12sp" />
+
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/connect_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conectar"
+            style="@style/Widget.ATAK.Button" />
+
+        <Button
+            android:id="@+id/channels_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canales"
+            android:layout_marginStart="8dp"
+            style="@style/Widget.ATAK.Button" />
+    </LinearLayout>
+
+    <!-- Users List -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuarios en canal"
+        android:textStyle="bold"
+        android:textColor="@color/atak_text"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/users_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</LinearLayout>
