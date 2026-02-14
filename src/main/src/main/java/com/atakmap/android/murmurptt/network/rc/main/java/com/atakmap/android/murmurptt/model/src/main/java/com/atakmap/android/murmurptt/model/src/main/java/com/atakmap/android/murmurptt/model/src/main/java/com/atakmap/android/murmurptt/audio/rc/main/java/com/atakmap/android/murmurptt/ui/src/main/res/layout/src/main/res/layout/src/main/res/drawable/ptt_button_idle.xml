@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/ptt_pressed">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/ptt_idle" />
+            <stroke
+                android:width="4dp"
+                android:color="@color/ptt_border" />
+            <size
+                android:width="200dp"
+                android:height="200dp" />
+        </shape>
+    </item>
+</ripple>
