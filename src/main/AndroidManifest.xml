@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.atakmap.android.murmurptt">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    
+    <!-- Permisos específicos de ATAK -->
+    <uses-permission android:name="com.atakmap.android.maps.permission.ATAK_PLUGIN" />
+
+    <application
+        android:name=".MurmurPTTApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MurmurPTT"
+        android:extractNativeLibs="true">
+
+        <!-- Plugin Entry Point para ATAK -->
+        <meta-data
+            android:name="atak-plugin-api"
+            android:value="4.8.0" />
+        
+        <meta-data
+            android:name="atak-plugin-class"
+            android:value="com.atakmap.android.murmurptt.plugin.MurmurPTTPlugin" />
+
+        <service
+            android:name=".service.PTTService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <activity
+            android:name=".activity.ServerConfigActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MurmurPTT.NoActionBar" />
+            
+        <activity
+            android:name=".activity.UserManagementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MurmurPTT.NoActionBar" />
+
+        <receiver
+            android:name=".receiver.PTTButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="com.atakmap.android.murmurptt.PTT_DOWN" />
+                <action android:name="com.atakmap.android.murmurptt.PTT_UP" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
