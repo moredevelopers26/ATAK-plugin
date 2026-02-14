@@ -1,0 +1,66 @@
+// ============================================================================
+// ARCHIVO: build.gradle (Module: app)
+// ============================================================================
+
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.atakmap.android.murmurptt'
+    compileSdk 33
+    
+    defaultConfig {
+        applicationId "com.atakmap.android.murmurptt"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0.0"
+        
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libopus.so'
+        pickFirst 'lib/arm64-v8a/libopus.so'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    
+    // ATAK SDK (colocar atak-sdk.jar en libs/)
+    implementation files('libs/atak-sdk.jar')
+    
+    // Protobuf para protocolo Mumble
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.12'
+    
+    // Opus codec
+    implementation 'io.github.jaredmdobson:opus-android:1.0.0'
+    
+    // Networking
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    
+    // Crypto
+    implementation 'org.bouncycastle:bcprov-jdk15to18:1.72'
+    
+    // UI
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+}
