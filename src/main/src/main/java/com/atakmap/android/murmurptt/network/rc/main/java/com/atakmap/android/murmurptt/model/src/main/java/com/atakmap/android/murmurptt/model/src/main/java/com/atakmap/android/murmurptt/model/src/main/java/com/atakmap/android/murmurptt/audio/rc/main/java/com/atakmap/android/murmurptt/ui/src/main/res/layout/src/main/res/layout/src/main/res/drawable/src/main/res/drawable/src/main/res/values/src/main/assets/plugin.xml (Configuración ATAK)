@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <name>MurmurPTT</name>
+    <version>1.0.0</version>
+    <description>Comunicaciones Push-to-Talk via servidores Murmur/Mumble</description>
+    <entryClass>com.atakmap.android.murmurptt.plugin.MurmurPTTPlugin</entryClass>
+    <minApiVersion>4.5.0</minApiVersion>
+    <targetApiVersion>4.8.0</targetApiVersion>
+    
+    <permissions>
+        <permission>android.permission.INTERNET</permission>
+        <permission>android.permission.RECORD_AUDIO</permission>
+        <permission>android.permission.MODIFY_AUDIO_SETTINGS</permission>
+        <permission>android.permission.ACCESS_NETWORK_STATE</permission>
+        <permission>android.permission.WAKE_LOCK</permission>
+        <permission>android.permission.FOREGROUND_SERVICE</permission>
+    </permissions>
+    
+    <features>
+        <feature>audio</feature>
+        <feature>network</feature>
+        <feature>dropdown</feature>
+    </features>
+</plugin>
